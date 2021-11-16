@@ -1,12 +1,17 @@
+"cSpell:disable"
 from tkinter import *
-
+import root as rt
+import os
 
 def btn_clicked():
-    print("Button Clicked")
+    window.destroy()
+    top = Tk()
+    rt.Aplicacion(top)
 
-
+#Sign Up
 window = Tk()
 
+window.title("Derivative--Sign Up")
 window.geometry("1152x700")
 window.configure(bg = "#ffffff")
 canvas = Canvas(
@@ -19,12 +24,12 @@ canvas = Canvas(
     relief = "ridge")
 canvas.place(x = 0, y = 0)
 
-background_img = PhotoImage(file = f"background.png")
+background_img = PhotoImage(file = "background.png")
 background = canvas.create_image(
     470, 380,
     image=background_img)
 
-entry0_img = PhotoImage(file = f"img_textBox0.png")
+entry0_img = PhotoImage(file = "img_textBox0.png")
 entry0_bg = canvas.create_image(
     820, 265,
     image = entry0_img)
@@ -39,7 +44,7 @@ entry0.place(
     width = 418.0,
     height = 67)
 
-entry1_img = PhotoImage(file = f"img_textBox1.png")
+entry1_img = PhotoImage(file = "img_textBox1.png")
 entry1_bg = canvas.create_image(
     820, 380,
     image = entry1_img)
@@ -54,8 +59,7 @@ entry1.place(
     width = 418.0,
     height = 67)
 
-#TODO:*Entry 3
-entry2_img = PhotoImage(file = f"img_textBox2.png")
+entry2_img = PhotoImage(file = "img_textBox2.png")
 entry2_bg = canvas.create_image(
     820, 500,
     image = entry2_img)
@@ -70,7 +74,7 @@ entry2.place(
     width = 418.0,
     height = 67)
 
-img0 = PhotoImage(file = f"img0.png")
+img0 = PhotoImage(file = "img0.png")
 b0 = Button(
     image = img0,
     borderwidth = 0,
