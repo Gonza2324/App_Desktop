@@ -15,4 +15,5 @@ class Aplicacion:
         self.python_img = ImageTk.PhotoImage(self.img)
         self.canvas.create_image(470, 360, image = self.python_img)
 
+
         self.root.mainloop()

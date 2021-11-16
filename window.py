@@ -37,7 +37,11 @@ entry0_bg = canvas.create_image(
 entry0 = Entry(
     bd = 0,
     bg = "#c4c4c4",
-    highlightthickness = 0)
+    highlightthickness = 0,
+    font = ("Arial", 24)
+)
+
+entry0.focus()
 
 entry0.place(
     x = 610, y = 232,
@@ -52,7 +56,9 @@ entry1_bg = canvas.create_image(
 entry1 = Entry(
     bd = 0,
     bg = "#c4c4c4",
-    highlightthickness = 0)
+    highlightthickness = 0,
+    font = ("Arial", 24)
+)
 
 entry1.place(
     x = 610, y = 348,
@@ -67,7 +73,9 @@ entry2_bg = canvas.create_image(
 entry2 = Entry(
     bd = 0,
     bg = "#C4C4C4",
-    highlightthickness = 0)
+    highlightthickness = 0,
+    font = ("Arial", 24)
+)
 
 entry2.place(
     x = 610, y = 467,
@@ -89,5 +97,6 @@ b0.place(
     width = 294,
     height = 92)
 
+window.bind("<Return>", lambda x: btn_clicked())
 window.resizable(False, False)
 window.mainloop()
