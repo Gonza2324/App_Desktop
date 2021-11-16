@@ -76,7 +76,9 @@ b0 = Button(
     borderwidth = 0,
     highlightthickness = 0,
     command = btn_clicked,
-    relief = "flat")
+    cursor = "hand2",
+    relief = "flat"
+    )
 
 b0.place(
     x = 671, y = 590,
