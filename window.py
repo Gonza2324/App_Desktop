@@ -82,9 +82,9 @@ entry2.place(
     width = 418.0,
     height = 67)
 
-img0 = PhotoImage(file = "img0.png")
-b0 = Button(
-    image = img0,
+img_btn = PhotoImage(file = "img0.png")
+btn_Registrar = Button(
+    image = img_btn,
     borderwidth = 0,
     highlightthickness = 0,
     command = btn_clicked,
@@ -92,7 +92,7 @@ b0 = Button(
     relief = "flat"
     )
 
-b0.place(
+btn_Registrar.place(
     x = 671, y = 590,
     width = 294,
     height = 92)
