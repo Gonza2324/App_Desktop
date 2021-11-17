@@ -1,13 +1,23 @@
 "cSpell:disable"
 from tkinter import *
 import root as rt
-import os
+import database as db
+
+def Insert():
+    db.conectar_basededatos()
+    
+    entry0 = text_entry0.get()
+    entry1 = text_entry1.get()
+    entry2 = text_entry2.get()
+
+    db.Insert(entry0, entry1, entry2)
+    window.destroy()
 
 def btn_clicked():
-    window.destroy()
+    Insert()
     top = Tk()
     rt.Aplicacion(top)
-
+    Insert()
 #Sign Up
 window = Tk()
 
@@ -34,7 +44,10 @@ entry0_bg = canvas.create_image(
     820, 265,
     image = entry0_img)
 
+text_entry0 = StringVar()
 entry0 = Entry(
+    window,
+    textvariable=text_entry0,
     bd = 0,
     bg = "#c4c4c4",
     highlightthickness = 0,
@@ -53,7 +66,10 @@ entry1_bg = canvas.create_image(
     820, 380,
     image = entry1_img)
 
+text_entry1 = StringVar()
 entry1 = Entry(
+    window,
+    textvariable=text_entry1,
     bd = 0,
     bg = "#c4c4c4",
     highlightthickness = 0,
@@ -70,7 +86,10 @@ entry2_bg = canvas.create_image(
     820, 500,
     image = entry2_img)
 
+text_entry2 = StringVar()
 entry2 = Entry(
+    window,
+    textvariable= text_entry2,
     bd = 0,
     bg = "#C4C4C4",
     highlightthickness = 0,
