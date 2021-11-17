@@ -1,7 +1,8 @@
 "cSpell:disable"
 from tkinter import *
+from tkinter import font
 from PIL import Image, ImageTk
-from sympy import diff, Symbol, sympify
+from sympy import diff, Symbol
 
 x = Symbol("x")
 
@@ -23,7 +24,19 @@ class Aplicacion:
             font = ("Arial", 20),
             border=0
         )
+
         self.funtion_label.place(x = 440, y = 190)
+
+        self.funcion_input = StringVar()
+        self.funcion = Entry(self.root, width=28)
+        self.funcion.config(
+            font = ("Arial", 20),
+           justify=CENTER,
+            bg="#DBDBDB",
+            bd = 0
+        )
+        self.funcion.focus()
+        self.funcion.place(x = 460, y = 245)
 
         self.img_textbox0 = Image.open('img_textBox0.png')
         self.python_img0 = ImageTk.PhotoImage(self.img_textbox0)
@@ -33,13 +46,28 @@ class Aplicacion:
         self.python_img1 = ImageTk.PhotoImage(self.img_answer)
         self.canvas.create_image(680, 400, image = self.python_img1)
 
+        def calculo():
+            f = self.funcion.get()
+            calcular = diff(f, x)
+            self.derivate.set(calcular)
+
         self.derivate = StringVar()
         self.answer = Label(self.root, textvariable=self.derivate)
         self.answer.config(
             font=("Arial", 20),
-            bg="#DBDBDB"
+            bg="#DBDBDB",
+            justify=CENTER
         )
         self.answer.place(x = 460, y = 380)
+
+        self.btn_calculo = Button(self.root, text = "Calcular", command=calculo)
+        self.btn_calculo.config(
+            font = ("Arial", 27),
+            activebackground="#FF8E15",
+            background= "#FF8E15",
+            relief="groove"
+        )
+        self.btn_calculo.place(x = 600, y = 500)
 
         self.root.resizable(False, False)
         self.root.mainloop()
@@ -47,4 +75,4 @@ class Aplicacion:
 #TODO: temporal, solo para poder trabajar en este archivo sin recurrir al de window
 if __name__ == '__main__':
     root = Tk()
-    Aplicacion(root)
+    app = Aplicacion(root)
