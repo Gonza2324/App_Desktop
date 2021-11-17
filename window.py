@@ -49,7 +49,7 @@ entry0 = Entry(
     window,
     textvariable=text_entry0,
     bd = 0,
-    bg = "#c4c4c4",
+    bg="#DBDBDB",
     highlightthickness = 0,
     font = ("Arial", 24)
 )
@@ -71,7 +71,7 @@ entry1 = Entry(
     window,
     textvariable=text_entry1,
     bd = 0,
-    bg = "#c4c4c4",
+    bg="#DBDBDB",
     highlightthickness = 0,
     font = ("Arial", 24)
 )
@@ -91,7 +91,7 @@ entry2 = Entry(
     window,
     textvariable= text_entry2,
     bd = 0,
-    bg = "#C4C4C4",
+    bg="#DBDBDB",
     highlightthickness = 0,
     font = ("Arial", 24)
 )

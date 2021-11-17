@@ -12,6 +12,7 @@ cursor = midb.cursor()
 
 def conectar_basededatos():
     return midb
+
 #TODO:cambiar el nombre de la tabla
 def Insert(entry1, entry2, entry3):
     cursor.execute("""
