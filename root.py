@@ -47,9 +47,13 @@ class Aplicacion:
         self.canvas.create_image(680, 400, image = self.python_img1)
 
         def calculo():
-            f = self.funcion.get()
-            calcular = diff(f, x)
-            self.derivate.set(calcular)
+            try:
+                f = self.funcion.get()
+                calcular = diff(f, x)
+                self.derivate.set(calcular)
+            except:
+                self.derivate.set("Error, Verifica si la funcion esta" + "\n escrita correctamente")
+                self.answer.place(x = 460, y = 365)
 
         self.derivate = StringVar()
         self.answer = Label(self.root, textvariable=self.derivate)
