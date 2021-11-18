@@ -77,6 +77,7 @@ class Aplicacion:
             font = ("Arial", 27),
             activebackground="#FF8E15",
             background= "#FF8E15",
+            cursor = "hand2",
             relief="groove"
         )
         self.btn_calculo.place(x = 480, y = 500)
@@ -86,6 +87,7 @@ class Aplicacion:
             font = ("Arial", 27),
             activebackground="#FF8E15",
             background= "#FF8E15",
+            cursor = "hand2",
             relief="groove"
         )
         self.btn_calculo_two_variables.place(x = 680, y = 500)
