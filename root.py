@@ -58,8 +58,8 @@ class Aplicacion:
         def calculo_two_variables_f():
             try:
                 f = self.funcion.get()
-                calcular_x = diff(f, x)
                 calcular_y = diff(f, y)
+                self.derivate.set(calcular_y)
             except:
                 messagebox.showerror("Error", "¡Introduce la funcion correctamente!")
 
@@ -72,7 +72,7 @@ class Aplicacion:
         )
         self.answer.place(x = 460, y = 380)
 
-        self.btn_calculo = Button(self.root, text = "1 variable", command=calculo_one_variable_f)
+        self.btn_calculo = Button(self.root, text = "Derivar x", command=calculo_one_variable_f)
         self.btn_calculo.config(
             font = ("Arial", 27),
             activebackground="#FF8E15",
@@ -81,7 +81,7 @@ class Aplicacion:
         )
         self.btn_calculo.place(x = 480, y = 500)
 
-        self.btn_calculo_two_variables = Button(self.root, text = "2 variables", command=calculo_two_variables_f)
+        self.btn_calculo_two_variables = Button(self.root, text = "Derivar y", command=calculo_two_variables_f)
         self.btn_calculo_two_variables.config(
             font = ("Arial", 27),
             activebackground="#FF8E15",
