@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 from sympy import diff, Symbol
 
 x = Symbol("x")
+y = Symbol("y")
 
 class Aplicacion:
     def __init__(self, root):
@@ -46,7 +47,7 @@ class Aplicacion:
         self.python_img1 = ImageTk.PhotoImage(self.img_answer)
         self.canvas.create_image(680, 400, image = self.python_img1)
 
-        def calculo():
+        def calculo_one_variable_f():
             try:
                 f = self.funcion.get()
                 calcular = diff(f, x)
@@ -54,8 +55,13 @@ class Aplicacion:
             except:
                 messagebox.showerror("Error", "¡Introduce la funcion correctamente!")
 
-        def Calculo_2_var():
-            pass
+        def calculo_two_variables_f():
+            try:
+                f = self.funcion.get()
+                calcular_x = diff(f, x)
+                calcular_y = diff(f, y)
+            except:
+                messagebox.showerror("Error", "¡Introduce la funcion correctamente!")
 
         self.derivate = StringVar()
         self.answer = Label(self.root, textvariable=self.derivate)
@@ -66,14 +72,23 @@ class Aplicacion:
         )
         self.answer.place(x = 460, y = 380)
 
-        self.btn_calculo = Button(self.root, text = "Calcular", command=calculo)
+        self.btn_calculo = Button(self.root, text = "1 variable", command=calculo_one_variable_f)
         self.btn_calculo.config(
             font = ("Arial", 27),
             activebackground="#FF8E15",
             background= "#FF8E15",
             relief="groove"
         )
-        self.btn_calculo.place(x = 600, y = 500)
+        self.btn_calculo.place(x = 480, y = 500)
+
+        self.btn_calculo_two_variables = Button(self.root, text = "2 variables", command=calculo_two_variables_f)
+        self.btn_calculo_two_variables.config(
+            font = ("Arial", 27),
+            activebackground="#FF8E15",
+            background= "#FF8E15",
+            relief="groove"
+        )
+        self.btn_calculo_two_variables.place(x = 680, y = 500)
 
         self.root.resizable(False, False)
         self.root.mainloop()
