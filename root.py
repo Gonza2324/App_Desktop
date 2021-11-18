@@ -1,6 +1,6 @@
 "cSpell:disable"
 from tkinter import *
-from tkinter import font
+from tkinter import font, messagebox
 from PIL import Image, ImageTk
 from sympy import diff, Symbol
 
@@ -52,8 +52,10 @@ class Aplicacion:
                 calcular = diff(f, x)
                 self.derivate.set(calcular)
             except:
-                self.derivate.set("Error, Verifica si la funcion esta" + "\n escrita correctamente")
-                self.answer.place(x = 460, y = 365)
+                messagebox.showerror("Error", "¡Introduce la funcion correctamente!")
+
+        def Calculo_2_var():
+            pass
 
         self.derivate = StringVar()
         self.answer = Label(self.root, textvariable=self.derivate)
